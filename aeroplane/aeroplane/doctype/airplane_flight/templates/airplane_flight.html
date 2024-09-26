@@ -1,0 +1,58 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="page-breadcrumbs">
+    <div class="breadcrumb-container container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+                    class="breadcrumb-item">
+                    <a itemprop="item" href="/me">
+                        <span itemprop="name">My Account</span>
+                        <meta itemprop="position" content="1">
+                    </a>
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+                    class="breadcrumb-item">
+                    <a itemprop="item" href="../airplane">
+                        <span itemprop="name">Airplane</span>
+                        <meta itemprop="position" content="1">
+                    </a>
+                </li>
+                <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+                    class="breadcrumb-item active" aria-current="page">
+                    <span itemprop="item">
+                        <span itemprop="name">{{ title }}</span>
+                        <meta itemprop="position" content="3">
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h1> {{ doc.title or doc.name }}</h1>
+    </div>
+    <div style="margin-top: 8%;">
+        {% set date = frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") %}
+        {% set duration = frappe.utils.format_duration(doc.duration) %}
+        {% set airplane_obj = frappe.get_doc('Airplane', doc.airplane) %}
+        {% set airline_obj = frappe.get_doc('Airline', airplane_obj.airline) %} <!-- Correct fetching of Airline -->
+
+        <h3>Flight Details</h3>
+        <ul>
+            <li>Airline: {{ airline_obj.airline_name }} </li> <!-- Correctly displaying the airline name -->
+            <li>{{ doc.source_airport_code }} -> {{ doc.destination_airport_code }}</li>
+            <li>{{ date }} | {{ doc.time_of_departure }}</li>
+            <li>Duration: {{ duration }}</li>
+        </ul>
+        <button style="background-color: #2591EE; border-radius: 15px; border: none;"
+            class="px-6 py-2 text-white rounded">Book Flight</button>
+    </div>
+
+</div>
+{% endblock %}
+
+<!-- this is a sample default web page template -->

@@ -1,0 +1,15 @@
+<div class=" card text-white mt-5">
+	<div class="card-body">
+		<!-- <a href="{{ doc.route }}" class="text-justify">{{ doc.title or doc.name }}</a> -->
+		<h5>{{ doc.title or doc.name }}</h5>
+		<h6 style="font-size: medium; color:gray">{{ doc.source_airport_code }} -> {{ doc.destination_airport_code }}
+		</h6>
+		<h6 style="color:gray; margin-top: 10px;">{{ doc.date_of_departure }} | {{ doc.time_of_departure }} | {{
+			doc.duration }}</h6>
+		<a href="{{ doc.route }}" class="text-justify" style="color:blue;">View Details</a>
+	</div>
+</div>
+
+
+</div>
+<!-- this is a sample default list template -->

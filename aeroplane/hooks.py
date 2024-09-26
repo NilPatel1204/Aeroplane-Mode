@@ -27,7 +27,7 @@ app_license = "mit"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/aeroplane/css/aeroplane.css"
 # app_include_js = "/assets/aeroplane/js/aeroplane.js"
-
+# Flight ticket is boarded
 # include js, css files in header of web template
 # web_include_css = "/assets/aeroplane/css/aeroplane.css"
 # web_include_js = "/assets/aeroplane/js/aeroplane.js"
