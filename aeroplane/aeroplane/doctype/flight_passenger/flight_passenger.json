@@ -8,6 +8,7 @@
   "section_break_zdfu",
   "first_name",
   "last_name",
+  "full_name",
   "date_of_birth"
  ],
  "fields": [
@@ -35,6 +36,12 @@
    "in_list_view": 1,
    "label": "Date Of Birth",
    "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -44,7 +51,7 @@
    "link_fieldname": "passenger"
   }
  ],
- "modified": "2024-09-25 14:32:55.850637",
+ "modified": "2024-09-25 15:22:56.973682",
  "modified_by": "Administrator",
  "module": "aeroplane",
  "name": "Flight Passenger",

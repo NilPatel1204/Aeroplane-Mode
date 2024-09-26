@@ -1,0 +1,18 @@
+<!-- show_me.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Me a Color</title>
+</head>
+
+<body>
+    {% set color = frappe.form_dict.get("color") %}
+    <div style="background-color:{% if color == None %}black{% else %}{{ color }}{% endif %}; height: 600px; width: 1000px;
+        border: 1px solid black;">
+    </div>
+</body>
+
+</html>
