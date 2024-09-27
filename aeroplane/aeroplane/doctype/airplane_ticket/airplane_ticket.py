@@ -11,7 +11,8 @@ class AirplaneTicket(Document):
 		self.calculate_amount()
 
 	def before_submit(self):
-		self.checkStatus()
+		pass
+		# self.checkStatus() 
 
 	def before_insert(self):
 		self.create_randomSeat()
