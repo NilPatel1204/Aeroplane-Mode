@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airplane Flight Booking</title>
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #007bff;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .section-title {
+            margin: 40px 0 20px;
+            text-align: center;
+            font-size: 2rem;
+            color: #343a40;
+        }
+
+        .flight-info {
+            margin: 20px 0;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .airport-gallery img {
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Flight Booking</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Airports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Form -->
+    <section class="booking-form py-5">
+        <div class="container">
+            <h2 class="section-title">Book Your Flight</h2>
+            <form>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <input type="text" class="form-control" placeholder="From" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <input type="text" class="form-control" placeholder="To" required>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <input type="date" class="form-control" placeholder="Departure Date" required>
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <input type="date" class="form-control" placeholder="Return Date">
+                    </div>
+                    <div class="col-md-2 mb-3">
+                        <button class="btn btn-primary btn-block" type="submit">Search Flights</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Airplane Gallery -->
+    <section class="airplane-gallery py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Explore Our Fleet</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://t3.ftcdn.net/jpg/00/01/47/28/360_F_1472821_kMjcU0El8NkcU0k7zNtlVTU0Fl8W2l.jpg"
+                            class="card-img-top" alt="Airplane 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Boeing 737</h5>
+                            <p class="card-text">Comfortable and efficient for short to medium-haul flights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/155439315/photo/passenger-airplane-flying-above-clouds-during-sunset.jpg?s=612x612&w=0&k=20&c=LJWadbs3B-jSGJBVy9s0f8gZMHi2NvWFXa3VJ2lFcL0="
+                            class="card-img-top" alt="Airplane 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Airbus A320</h5>
+                            <p class="card-text">One of the most popular aircraft for domestic routes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://assets.foxdcg.com/dpp-uploaded/images/tmz-investigates-911-the-fifth-plane/keyart_s1.jpg"
+                            class="card-img-top" alt="Airplane 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Boeing 787 Dreamliner</h5>
+                            <p class="card-text">Experience the future of long-haul flights with advanced comfort.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Airport Gallery -->
+    <section class="airport-gallery py-5">
+        <div class="container">
+            <h2 class="section-title">Top Airports We Operate From</h2>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <img src="https://www.shutterstock.com/image-photo/white-passenger-plane-fly-over-600nw-2476332547.jpg"
+                        class="img-fluid mb-3" alt="Airport 1">
+                    <h5>John F. Kennedy International</h5>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStp8QAuPSC98By7MF633s0atYipL7Cq76Xfw&s"
+                        class="img-fluid mb-3" alt="Airport 2">
+                    <h5>Heathrow Airport</h5>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWwfw-vyVoSfi0Wtpa57t9ulYOFLSiaRfA0w&s"
+                        class="img-fluid mb-3" alt="Airport 3">
+                    <h5>Changi Airport</h5>
+                </div>
+                <div class="col-md-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaJgMje3e0qDNkjf7HR2BjHdaKliF6rEsWHQ&s"
+                        class="img-fluid mb-3" alt="Airport 4">
+                    <h5>Dubai International</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Flight Booking. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 4 JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
