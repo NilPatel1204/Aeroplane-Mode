@@ -9,6 +9,7 @@ from frappe.model.document import Document
 class AirplaneTicket(Document):
 	def validate(self):
 		self.calculate_amount()
+		self.check_seat_availability()
 
 	def before_submit(self):
 		pass
@@ -45,3 +46,16 @@ class AirplaneTicket(Document):
 		flight = frappe.get_doc("Airplane Flight",self.flight)
 		flight.status = "Completed"
 		flight.save()
+
+
+	def check_seat_availability(self):
+		airplane_flight = frappe.get_doc("Airplane Flight", self.flight)
+		airplane = frappe.get_doc("Airplane", airplane_flight.airplane)
+
+		airplane_capacity = airplane.capacity
+
+		existing_tickets = frappe.db.count("Airplane Ticket", filters={"flight": self.flight})
+		# print(f"Existing tickets: {existing_tickets}")
+
+		if existing_tickets >= airplane_capacity:
+			frappe.throw(f"The airplane has reached its seat capacity of {airplane_capacity}. No more tickets can be issued.")

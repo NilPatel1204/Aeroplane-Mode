@@ -1,0 +1,7 @@
+.report-header {
+  border-bottom: 2px solid #007bff; /* Change to your desired color */
+  padding: 10px; /* Adjust padding */
+  background-color: #f8f9fa; /* Optional: Background color for header */
+  font-size: 20px; /* Font size */
+  font-weight: bold; /* Font weight */
+}
