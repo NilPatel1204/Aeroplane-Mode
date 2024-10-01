@@ -1,31 +1,33 @@
 // Copyright (c) 2024, nil and contributors
 // For license information, please see license.txt
-
 frappe.ui.form.on("Airplane Ticket", {
-  onload: function (frm) {
-    // Set the initial color based on the default status
-    set_status_color(frm);
-  },
-  status: function (frm) {
-    // Change color when status is changed
-    set_status_color(frm);
+  refresh(frm) {
+    frm.add_custom_button(
+      "Assign Seats",
+      () => {
+        d.show();
+        console.log("Called");
+      },
+      "Actions"
+    );
   },
 });
 
-function set_status_color(frm) {
-  const status = frm.doc.status;
-  let color;
-
-  if (status === "Booked") {
-    color = "gray";
-  } else if (status === "Checked-In") {
-    color = "purple";
-  } else if (status === "Boarded") {
-    color = "green";
-  }
-
-  // Apply the color to the form header or another element
-  if (color) {
-    frm.$wrapper.find(".form-header").css("background-color", color);
-  }
-}
+let d = new frappe.ui.Dialog({
+  title: "Select Seat",
+  fields: [
+    {
+      label: "Seat Number",
+      fieldname: "seat_number",
+      fieldtype: "Data",
+    },
+  ],
+  size: "small",
+  primary_action_label: "Submit",
+  primary_action(values) {
+    if (values.seat_number) {
+      cur_frm.set_value("seat", values.seat_number);
+    }
+    d.hide();
+  },
+});
