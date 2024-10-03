@@ -24,7 +24,9 @@
   "column_break_ircz",
   "time_of_departure",
   "published",
-  "route"
+  "route",
+  "section_break_o1bp",
+  "crew_member"
  ],
  "fields": [
   {
@@ -133,6 +135,16 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "route"
+  },
+  {
+   "fieldname": "section_break_o1bp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_member",
+   "fieldtype": "Table",
+   "label": "Crew Member",
+   "options": "Crew Member"
   }
  ],
  "has_web_view": 1,
@@ -145,7 +157,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-09-26 11:55:19.491801",
+ "modified": "2024-10-03 11:43:56.482079",
  "modified_by": "Administrator",
  "module": "aeroplane",
  "name": "Airplane Flight",
@@ -164,6 +176,48 @@
    "share": 1,
    "submit": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Feet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Travel Agent",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Airport Authority Personnel",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Flight Crew Member",
+   "share": 1
   }
  ],
  "route": "airplane",
