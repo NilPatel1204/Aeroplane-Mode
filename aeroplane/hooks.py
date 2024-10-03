@@ -148,6 +148,15 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+    "cron": {
+        "0 9 1 * *": [
+            "aeroplane.airport_shop_management.doctype.contract.contract.send_rent_reminders"
+        ]
+    }
+}
+
+
 # scheduler_events = {
 # 	"all": [
 # 		"aeroplane.tasks.all"

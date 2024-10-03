@@ -12,7 +12,8 @@ class AirplaneTicket(Document):
 		self.check_seat_availability()
 
 	def before_submit(self):
-		pass
+		if not self.gate_number[0].isalpha() or not self.gate_number[1:].isdigit():
+			frappe.throw("Invalid Gate Number format. Example: A1, B2")
 		# self.checkStatus() 
 
 	def before_insert(self):

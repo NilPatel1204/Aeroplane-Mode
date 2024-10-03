@@ -24,7 +24,9 @@
   "column_break_ircz",
   "time_of_departure",
   "published",
-  "route"
+  "route",
+  "section_break_o1bp",
+  "crew_member"
  ],
  "fields": [
   {
@@ -133,6 +135,16 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "route"
+  },
+  {
+   "fieldname": "section_break_o1bp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew_member",
+   "fieldtype": "Table",
+   "label": "Crew Member",
+   "options": "Crew Member"
   }
  ],
  "has_web_view": 1,
@@ -145,7 +157,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-10-01 15:33:17.781400",
+ "modified": "2024-10-03 11:43:56.482079",
  "modified_by": "Administrator",
  "module": "aeroplane",
  "name": "Airplane Flight",
