@@ -11,8 +11,9 @@
   "shop",
   "rent_amount",
   "column_break_zenq",
-  "contract_start_data",
-  "contract_end_date"
+  "contract_start_date",
+  "contract_end_date",
+  "amended_from"
  ],
  "fields": [
   {
@@ -43,13 +44,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "contract_start_data",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Contract Start Data",
-   "reqd": 1
-  },
-  {
    "fieldname": "contract_end_date",
    "fieldtype": "Date",
    "label": "Contract End Date",
@@ -58,11 +52,29 @@
   {
    "fieldname": "column_break_zenq",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contract",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "contract_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Contract Start Date",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-10-03 16:38:12.941847",
+ "modified": "2024-10-04 17:21:40.359801",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Contract",
