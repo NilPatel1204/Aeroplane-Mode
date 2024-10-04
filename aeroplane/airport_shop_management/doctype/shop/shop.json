@@ -39,6 +39,7 @@
    "fieldname": "airport",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "airport",
    "options": "Airport",
    "reqd": 1
@@ -55,6 +56,7 @@
    "fieldname": "is_occupied",
    "fieldtype": "Check",
    "in_filter": 1,
+   "in_standard_filter": 1,
    "label": "is_occupied",
    "reqd": 1
   },
@@ -73,7 +75,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-03 17:40:59.606765",
+ "modified": "2024-10-04 15:26:42.976500",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",

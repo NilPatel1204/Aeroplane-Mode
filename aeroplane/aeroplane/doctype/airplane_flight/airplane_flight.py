@@ -27,3 +27,11 @@ class AirplaneFlight(WebsiteGenerator,Document):
             if ticket_doc.docstatus == 0:
                 ticket_doc.submit()
                 frappe.msgprint(f"Ticket {ticket_doc.name} has been submitted successfully.")
+                
+        def on_update(doc, method):
+            # Check if gate number has changed
+            if doc.has_value_changed("gate_number"):
+                tickets = frappe.get_all("Airplane Ticket", filters={"airplane_flight": doc.name})
+                for ticket in tickets:
+                    frappe.db.set_value("Airplane Ticket", ticket.name, "gate_number", doc.gate_number)
+                frappe.db.commit()
