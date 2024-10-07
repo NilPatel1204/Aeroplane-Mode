@@ -6,8 +6,8 @@ from frappe.website.website_generator import WebsiteGenerator
 from frappe.model.document import Document
 
 class AirplaneFlight(WebsiteGenerator,Document):
-    def validate(self):
-        frappe.msgprint(self.name)
+    # def validate(self):
+    #     frappe.msgprint(self.name)
 
     def on_submit(self):
         self.submit_boarded_tickets()

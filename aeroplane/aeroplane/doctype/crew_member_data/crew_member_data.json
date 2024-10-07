@@ -9,6 +9,7 @@
   "first_name",
   "last_name",
   "name1",
+  "column_break_zvko",
   "email",
   "phone"
  ],
@@ -46,11 +47,20 @@
    "in_list_view": 1,
    "label": "Last Name",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zvko",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-10-03 12:06:59.793340",
+ "links": [
+  {
+   "link_doctype": "Crew Member",
+   "link_fieldname": "name1"
+  }
+ ],
+ "modified": "2024-10-07 15:13:21.572142",
  "modified_by": "Administrator",
  "module": "aeroplane",
  "name": "Crew Member Data",
