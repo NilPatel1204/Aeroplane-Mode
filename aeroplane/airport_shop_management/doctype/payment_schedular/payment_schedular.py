@@ -2,8 +2,9 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import today, nowdate
 
-class PaymentSchedule(Document):
-    pass  # Other Payment Schedule logic goes here
+class PaymentSchedular(Document):
+    pass
+
 
 def generate_receipt_number():
     current_date = nowdate().replace("-", "")
@@ -24,17 +25,17 @@ def generate_receipt_number():
     receipt_number = f"{current_date}-{new_number:04d}"
     return receipt_number
 
-@frappe.whitelist()
-def record_payment(payment_schedule_name):
-    payment_schedule = frappe.get_doc("Payment Schedular", payment_schedule_name)
+# @frappe.whitelist()
+# def record_payment(payment_schedule_name):
+#     payment_schedule = frappe.get_doc("Payment Schedular", payment_schedule_name)
     
-    if payment_schedule.status != "Paid":
-        payment_schedule.status = "Paid"
-        payment_schedule.payment_date = today()
-        payment_schedule.receipt_number = generate_receipt_number()
-        payment_schedule.save()
+#     if payment_schedule.status != "Paid":
+#         payment_schedule.status = "Paid"
+#         payment_schedule.payment_date = today()
+#         payment_schedule.receipt_number = generate_receipt_number()
+#         payment_schedule.save()
         
-        send_receipt_to_tenant(payment_schedule)
+#         send_receipt_to_tenant(payment_schedule)
 
 def send_receipt_to_tenant(payment_schedule):
     tenant_email = payment_schedule.tenant_email  # Update based on your actual tenant email field

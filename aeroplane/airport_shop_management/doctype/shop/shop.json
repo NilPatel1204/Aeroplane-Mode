@@ -74,8 +74,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-10-04 15:26:42.976500",
+ "links": [
+  {
+   "link_doctype": "Contract",
+   "link_fieldname": "shop"
+  }
+ ],
+ "modified": "2024-10-07 15:16:08.177286",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Shop",

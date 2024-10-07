@@ -33,8 +33,13 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-10-03 16:28:19.111872",
+ "links": [
+  {
+   "link_doctype": "Contract",
+   "link_fieldname": "tenant"
+  }
+ ],
+ "modified": "2024-10-07 15:16:52.440879",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Tenant",
