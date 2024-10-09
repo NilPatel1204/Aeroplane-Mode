@@ -110,6 +110,7 @@ def generate_payment_schedule(contract_name):
         
         # Increment the start_date by one month for the next schedule
         start_date = add_months(start_date, 1)
+        
 
 def send_payment_reminders():
     # Get payment entries with status "Pending" and due within the next 3 days

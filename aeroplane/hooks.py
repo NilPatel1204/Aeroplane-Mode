@@ -151,9 +151,13 @@ app_license = "mit"
 scheduler_events = {
     "cron": {
         "0 9 1 * *": [
-            "aeroplane.airport_shop_management.doctype.contract.contract.send_rent_reminders"
+            "aeroplane.airport_shop_management.doctype.contract.contract.send_payment_reminders",
+            "aeroplane.airport_shop_management.doctype.payment_schedular.payment_schedular.record_payment"
         ],
-    }  
+    }
+    # "daily": [
+    #     "aeroplane.airport_shop_management.doctype.payment_schedular.payment_schedular.record_payment"
+    # ] 
 }
 
 
