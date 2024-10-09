@@ -25,20 +25,32 @@ def generate_receipt_number():
     receipt_number = f"{current_date}-{new_number:04d}"
     return receipt_number
 
-# @frappe.whitelist()
-# def record_payment(payment_schedule_name):
-#     payment_schedule = frappe.get_doc("Payment Schedular", payment_schedule_name)
-    
-#     if payment_schedule.status != "Paid":
-#         payment_schedule.status = "Paid"
-#         payment_schedule.payment_date = today()
-#         payment_schedule.receipt_number = generate_receipt_number()
-#         payment_schedule.save()
-        
-#         send_receipt_to_tenant(payment_schedule)
+@frappe.whitelist()
+def record_payment(payment_schedule_name):
+    payment_schedule = frappe.get_doc("Payment Schedular", payment_schedule_name)
 
-def send_receipt_to_tenant(payment_schedule):
-    tenant_email = payment_schedule.tenant_email  # Update based on your actual tenant email field
+    if payment_schedule.status != "Paid":
+        payment_schedule.status = "Paid"
+        payment_schedule.payment_date = today()
+        payment_schedule.receipt_number = generate_receipt_number()
+
+        # Get the contract linked to the payment schedule
+        if payment_schedule.contract:
+            contract_doc = frappe.get_doc("Contract", payment_schedule.contract)
+
+            # Now get the tenant information from the contract
+            if contract_doc.tenant:
+                tenant_doc = frappe.get_doc("Tenant", contract_doc.tenant)
+                tenant_email = tenant_doc.email if tenant_doc else None
+            else:
+                tenant_email = None
+        else:
+            tenant_email = None
+
+        payment_schedule.save()
+        send_receipt_to_tenant(payment_schedule, tenant_email)
+
+def send_receipt_to_tenant(payment_schedule, tenant_email):
     if tenant_email:
         message = f"""
         Dear Tenant,
